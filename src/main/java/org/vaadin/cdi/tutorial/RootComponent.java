@@ -35,9 +35,9 @@ public class RootComponent extends Div implements LocaleChangeObserver {
     @Inject
     public RootComponent(Greeter greeter, ExampleTemplate template) {
         Label greeting = new Label(greeter.sayHello());
-        Style grretingStyle = greeting.getElement().getStyle();
-        grretingStyle.set("display", "block");
-        grretingStyle.set("margin-bottom", "10px");
+        Style greetingStyle = greeting.getElement().getStyle();
+        greetingStyle.set("display", "block");
+        greetingStyle.set("margin-bottom", "10px");
 
         Button button = new Button("Switch language to Chinese",
                 event -> getUI().get().setLocale(Locale.CHINESE));
