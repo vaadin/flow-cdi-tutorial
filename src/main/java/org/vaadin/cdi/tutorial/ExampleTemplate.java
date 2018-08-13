@@ -33,7 +33,7 @@ public class ExampleTemplate extends PolymerTemplate<ExampleModel> {
     /**
      * Template model which defines the single "name" property.
      */
-    public static interface ExampleModel extends TemplateModel {
+    public interface ExampleModel extends TemplateModel {
 
         void setMessage(String message);
     }
