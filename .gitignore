@@ -1,0 +1,9 @@
+target/
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+*.DS_Store
+
+/src/main/webapp/frontend-es*/
