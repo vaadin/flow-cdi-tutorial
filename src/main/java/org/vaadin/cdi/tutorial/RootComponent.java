@@ -33,8 +33,8 @@ public class RootComponent extends Div implements LocaleChangeObserver {
     private RouterLink link;
 
     @Inject
-    public RootComponent(Greeter greeter, ExampleTemplate template) {
-        Label greeting = new Label(greeter.sayHello());
+    public RootComponent(UiGreeter uiGreeter, ExampleTemplate template) {
+        Label greeting = new Label(uiGreeter.sayHello());
         Style greetingStyle = greeting.getElement().getStyle();
         greetingStyle.set("display", "block");
         greetingStyle.set("margin-bottom", "10px");
@@ -44,7 +44,7 @@ public class RootComponent extends Div implements LocaleChangeObserver {
 
         link = new RouterLink(
                 getTranslation("root.navigate_to_component"),
-                ViewComponent.class);
+                ParentView.class);
 
         Style linkStyle = link.getElement().getStyle();
         linkStyle.set("display", "block");

@@ -39,7 +39,7 @@ public class ExampleTemplate extends PolymerTemplate<ExampleModel> {
     }
 
     @Inject
-    public ExampleTemplate(Greeter bean) {
+    public ExampleTemplate(UiGreeter bean) {
         // Set the initial value to the "message" property.
         getModel().setMessage(bean.sayHello());
     }
