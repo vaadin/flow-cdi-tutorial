@@ -20,10 +20,10 @@ import com.vaadin.cdi.annotation.NormalUIScoped;
 import java.io.Serializable;
 
 @NormalUIScoped
-public class Greeter implements Serializable {
+public class UiGreeter implements Serializable {
 
     public String sayHello() {
-        return "Hello from bean " + toString();
+        return "Hello from ui scoped bean " + toString();
     }
 
 }
