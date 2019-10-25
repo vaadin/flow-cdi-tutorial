@@ -18,7 +18,7 @@
         <webapp.directory>src/main/webapp</webapp.directory>
 
         <!-- Dependencies -->
-        <vaadin.version>10.0.3</vaadin.version>
+        <vaadin.version>14.0.9</vaadin.version>
         <flow.maven.plugin.version>1.0.3</flow.maven.plugin.version>
     </properties>
 
@@ -53,10 +53,13 @@
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-core</artifactId>
         </dependency>
+		<dependency>
+    		<groupId>com.vaadin</groupId>
+    		<artifactId>flow-server-compatibility-mode</artifactId>
+		</dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-cdi</artifactId>
-            <version>10.0.0.beta1</version>
         </dependency>
         <dependency>
             <groupId>javax</groupId>
@@ -74,6 +77,14 @@
 
     <build>
         <plugins>
+			<plugin>
+				<groupId>org.wildfly.plugins</groupId>
+				<artifactId>wildfly-maven-plugin</artifactId>
+				<version>2.0.0.Final</version>
+				<configuration>
+    				<version>15.0.0.Final</version> 
+				</configuration>
+			</plugin>
             <plugin>
                 <groupId>org.apache.tomee.maven</groupId>
                 <artifactId>tomee-maven-plugin</artifactId>
