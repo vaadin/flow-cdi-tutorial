@@ -46,12 +46,11 @@ public class RootComponent extends Div implements LocaleChangeObserver {
                 getTranslation("root.navigate_to_component"),
                 ParentView.class);
 
-        Style linkStyle = link.getElement().getStyle();
+        Style linkStyle = link.getStyle();
         linkStyle.set("display", "block");
         linkStyle.set("margin-bottom", "10px");
 
         add(greeting, button, link, template);
-        add(template);
     }
 
     @Override

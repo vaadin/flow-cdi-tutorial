@@ -12,8 +12,13 @@ The topics that are covered in this tutorial project:
 * Register VaadinServiceInitListener via CDI Observer
 * Flow template within CDI
 * Use I18N in CDI
+* Extending servlet
 
 ## Running the project from command line
 
 Run `mvn clean package tomee:run` in the project root directory. After the server has started point your browser to [http://localhost:8080](http://localhost:8080) to see the resulting application.
+
+or
+
+Run ``mvn clean package wildfly:run` in the project root directory. After the server has started point your browser to [http://localhost:8080/cdi.tutorial-1.0.0-SNAPSHOT/](http://localhost:8080/cdi.tutorial-1.0.0-SNAPSHOT/) to see the resulting application.
 
