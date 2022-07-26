@@ -18,8 +18,7 @@
         <webapp.directory>src/main/webapp</webapp.directory>
 
         <!-- Dependencies -->
-        <vaadin.version>14.0.9</vaadin.version>
-        <flow.maven.plugin.version>1.0.3</flow.maven.plugin.version>
+        <vaadin.version>14.8.14</vaadin.version>
     </properties>
 
     <pluginRepositories>
@@ -53,10 +52,6 @@
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-core</artifactId>
         </dependency>
-		<dependency>
-    		<groupId>com.vaadin</groupId>
-    		<artifactId>flow-server-compatibility-mode</artifactId>
-		</dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-cdi</artifactId>
@@ -64,7 +59,7 @@
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
-            <version>7.0</version>
+            <version>8.0</version>
             <scope>provided</scope>
         </dependency>
 
@@ -77,6 +72,22 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>com.vaadin</groupId>
+                <artifactId>vaadin-maven-plugin</artifactId>
+                <version>${vaadin.version}</version>
+                <configuration>
+                	<pnpmEnable>true</pnpmEnable>
+                	<requireHomeNodeExec>true</requireHomeNodeExec>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-frontend</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 			<plugin>
 				<groupId>org.wildfly.plugins</groupId>
 				<artifactId>wildfly-maven-plugin</artifactId>
@@ -132,18 +143,12 @@
                 <plugins>
                     <plugin>
                         <groupId>com.vaadin</groupId>
-                        <artifactId>flow-maven-plugin</artifactId>
-                        <version>${flow.maven.plugin.version}</version>
+                        <artifactId>vaadin-maven-plugin</artifactId>
                         <executions>
                             <execution>
-                                <phase>prepare-package</phase>
                                 <goals>
-                                    <goal>copy-production-files</goal>
-                                    <goal>package-for-production</goal>
+                                	<goal>build-frontend</goal>
                                 </goals>
-                                <configuration>
-                                    <transpileOutputDirectory>${webapp.directory}</transpileOutputDirectory>
-                                </configuration>
                             </execution>
                         </executions>
                     </plugin>

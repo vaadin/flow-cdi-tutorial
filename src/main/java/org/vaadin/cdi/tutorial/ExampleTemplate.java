@@ -16,7 +16,7 @@
 package org.vaadin.cdi.tutorial;
 
 import com.vaadin.flow.component.Tag;
-import com.vaadin.flow.component.dependency.HtmlImport;
+import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.templatemodel.TemplateModel;
 import org.vaadin.cdi.tutorial.ExampleTemplate.ExampleModel;
@@ -27,14 +27,13 @@ import javax.inject.Inject;
  * Simple template example.
  */
 @Tag("example-template")
-@HtmlImport("frontend://ExampleTemplate.html")
+@JsModule("./example-template.js")
 public class ExampleTemplate extends PolymerTemplate<ExampleModel> {
 
     /**
      * Template model which defines the single "name" property.
      */
     public interface ExampleModel extends TemplateModel {
-
         void setMessage(String message);
     }
 
